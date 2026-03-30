@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ATS Pro Resume Analyzer</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+
+</head>
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<div class="card">
+    <h1>🚀 ATS Pro Analyzer</h1>
+    <p class="sub">Upload your Resume (PDF, DOCX, TXT)</p>
+
+    <div class="upload-box" id="uploadBox">
+        <input type="file" id="resumeInput" accept=".pdf,.docx,.txt">
+        <div class="upload-icon">⬆</div>
+        <p id="uploadText">Click or Drag to Upload</p>
+    </div>
+
+    <button onclick="analyzeResume()" class="btn">Analyze Resume</button>
+
+    <div class="loading" id="loading">Analyzing...</div>
+
+    <div class="results" id="results">
+        <div class="score-circle">
+            <span id="scoreText">0%</span>
+        </div>
+
+        <div class="skills-container">
+            <div>
+                <h3>✅ Detected Skills</h3>
+                <div id="detected"></div>
+            </div>
+
+            <div>
+                <h3>❌ Missing Skills</h3>
+                <div id="missing"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

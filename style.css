@@ -1,0 +1,156 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    }
+    
+    body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0f172a;
+    overflow:hidden;
+    color:white;
+    }
+    
+    /* Animated Blobs */
+    .blob{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:linear-gradient(45deg,#00f5ff,#008cff);
+    border-radius:50%;
+    filter:blur(120px);
+    animation:move 10s infinite alternate;
+    }
+    
+    .blob1{top:-100px;left:-100px;}
+    .blob2{bottom:-100px;right:-100px;}
+    
+    @keyframes move{
+    from{transform:translate(0,0);}
+    to{transform:translate(50px,50px);}
+    }
+    
+    /* Glass Card */
+    .card{
+    position:relative;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    padding:40px;
+    border-radius:25px;
+    width:480px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(0,0,0,0.4);
+    animation:fadeIn 1s ease;
+    }
+    
+    .sub{
+    opacity:0.7;
+    margin-bottom:20px;
+    }
+    
+    /* Upload */
+    .upload-box{
+    border:2px dashed #00f5ff;
+    padding:30px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:0.4s;
+    margin-bottom:20px;
+    }
+    
+    .upload-box:hover{
+    background:rgba(0,255,255,0.1);
+    box-shadow:0 0 20px #00f5ff;
+    }
+    
+    .upload-icon{
+    font-size:40px;
+    animation:bounce 1.5s infinite;
+    }
+    
+    @keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    }
+    
+    input{display:none;}
+    
+    .btn{
+    padding:12px 35px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,#00f5ff,#008cff);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    }
+    
+    .btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #00f5ff;
+    }
+    
+    .loading{
+    display:none;
+    margin-top:10px;
+    animation:pulse 1s infinite;
+    }
+    
+    @keyframes pulse{
+    0%{opacity:0.3}
+    50%{opacity:1}
+    100%{opacity:0.3}
+    }
+    
+    /* Results */
+    .results{
+    display:none;
+    margin-top:30px;
+    animation:fadeIn 1s ease;
+    }
+    
+    .score-circle{
+    width:150px;
+    height:150px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    font-weight:bold;
+    background:conic-gradient(#00f5ff 0%,#1e293b 0%);
+    transition:1.5s;
+    }
+    
+    .skills-container{
+    display:flex;
+    gap:20px;
+    justify-content:space-between;
+    }
+    
+    .skills-container div{
+    flex:1;
+    }
+    
+    .skill-card{
+    background:rgba(255,255,255,0.1);
+    padding:8px;
+    margin:6px 0;
+    border-radius:10px;
+    animation:slideIn 0.4s ease;
+    }
+    
+    @keyframes slideIn{
+    from{transform:translateX(-20px);opacity:0;}
+    to{transform:translateX(0);opacity:1;}
+    }
+    
+    @keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+    }
